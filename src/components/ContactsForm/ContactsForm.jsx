@@ -12,7 +12,7 @@ const ContactForm = () => {
 
   const handleSubmit = event => {
     event.preventDefault();
-    if (name && /^\d+$/.test(number)) {
+    if (name && /^[0-9+()\s-]*$/.test(number)) {
       dispatch(addContact({ name, number }));
     }
   };
@@ -41,7 +41,7 @@ const ContactForm = () => {
         type="text"
         className={style.input}
         placeholder="Add a number"
-        pattern="\+?\d{1,4}?[-.\s]?\(?\d{1,3}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}"
+        pattern="^[0-9+()\s-]*$"
         value={number}
         onChange={handleNumberChange}
       />

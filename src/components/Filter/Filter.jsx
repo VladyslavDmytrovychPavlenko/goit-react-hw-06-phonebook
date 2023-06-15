@@ -28,9 +28,4 @@ const Filter = () => {
   );
 };
 
-Filter.propTypes = {
-  value: PropTypes.string,
-  filter: PropTypes.func,
-};
-
 export default Filter;
